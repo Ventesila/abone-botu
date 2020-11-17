@@ -6,18 +6,18 @@ let ayarlar = require("../ayarlar.json")
 exports.run = async(client, message) => {
   if(!message.member.hasPermission(`ADMINISTRATOR`)) return message.channel.send(`Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin.`)
   
-  let log = message.mentions.channels.first()
-  if(!log) return message.channel.send(`Bir kanal etiketlemen gerekmekte örnek: ${ayarlar.prefix}abonelog #kanal`)
+  let rol = message.mentions.roles.first()
+  if(!rol) return message.channel.send(`Bir rol etiketlemen gerekmekte örnek: ${ayarlar.prefix}abone-y-rol @rol`)
   
   
-  database.set(`abonelog.${message.guild.id}`, log.id)
-  message.channel.send(`Abone kanalı başarıyla ${log} olarak ayarlandı.`)
+  database.set(`aboneyetkilisi.${message.guild.id}`, rol.id)
+  message.channel.send(`Abone yetkilisi başarıyla ${rol} olarak ayarlandı.`)
 }
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['abone-log'],
+  aliases: ['abone-y-rol'],
   perm: 0
 }
 exports.help = {
@@ -25,7 +25,7 @@ exports.help = {
 }
 
 exports.play = {
-  kullanım: '!abonelog #kanal',
-  açıklama: 'Abone Logunu Ayarlarsınız',
+  kullanım: '!abone-y-rol @rol',
+  açıklama: 'Abone Yetkili Rolünü Ayarlarsınız',
   kategori: 'Abone'
 }
