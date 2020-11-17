@@ -12,17 +12,20 @@ let abonerol = await database.fetch(`abonerol.${message.guild.id}`)
 if(!abonerol) return message.channel.send(`Abone rolü ayarlanmamış!`)
   if(!abonelog) return message.channel.send(`Abone log kanalı ayarlanmamış!`)
   if(!aboneyetkilisi) return message.channel.send(`Abone yetkili rolü ayarlanmamış!`)
-  
+  let user = message.mentions.users.first()
   if(!message.member.roles.cache.has(aboneyetkilisi)) return message.channel.send(`Bu komutu kullanabilmek için gerekli yetkiye sahip değilsin.`)
   
   if(!message.mentions.users.first()) return message.channel.send(`Bir Üye Etiketle!`)
   
   await(abonekisi.roles.add(abonerol))
+  message.author.send(`Kullanıcıya abone rolünü başarıyla verdin.`)
   const embed = new Discord.MessageEmbed()
   .setTitle(`Abone Rolü Verildi!`)
   .addField(`Abone Rolünü Veren Kişi:`, `Adı:${message.author.tag} İD:${message.author.id}`, true)
-  .addField(``)
-  
+  .addField(`Abone Rolü Verilen Kişi`, `${user}`, true)
+  .addField(`Mesaj linki`,`[Tıkla](https://discord.com/channels/${message.guild.id}/${message.channel.id}/${message.id})`, true)
+  .setColor(`BLUE`)
+  .setFooter(`${client.user.username} Abone Sistemi`)
   message.guild.channels.cache.get(abonelog).send(embed)
 }
 
@@ -41,3 +44,5 @@ exports.play = {
   açıklama: 'Abone Yetkili Rolünü Ayarlarsınız',
   kategori: 'Abone'
 }
+
+//CodeWorld Yunus Emre
