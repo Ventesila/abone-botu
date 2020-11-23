@@ -1,12 +1,12 @@
 {
-  "//1": "Coderworld.xyz | Yunus Emre",
-  "//2": "Lord Abi Adamdır.!",
+  "//1": " | ",
+  "//2": ".!",
   "name": "hello-express",
   "version": "0.0.1",
-  "description": "Coderworld.xyz | Yunus Emre",
-  "main": "lordabimiz.js",
+  "description": "",
+  "main": "main.js",
   "scripts": {
-    "start": "node lordabimiz.js"
+    "start": "node main.js"
   },
   "dependencies": {
     "express": "^4.17.1",
@@ -27,8 +27,5 @@
   "keywords": [
     "node",
     "glitch",
-    "express",
-    "Lord Adamdır Gerisi Yalandır",
-    "Altyapıyı Yapan: Yunus Emre!"
-  ]
+    "express"  ]
 }
