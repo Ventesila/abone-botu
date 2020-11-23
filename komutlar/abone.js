@@ -45,4 +45,3 @@ exports.play = {
   kategori: 'Abone'
 }
 
-//CodeWorld Yunus Emre
