@@ -16,7 +16,7 @@ let yardim = new Discord.MessageEmbed()
 
 exports.conf = {
     enabled: true, 
-    aliases: ["yardim","help",'komutlar','commands'],
+    aliases: ["yardim","help",],
   };
   
   exports.help = {
