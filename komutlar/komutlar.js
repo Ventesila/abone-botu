@@ -1,25 +1,24 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js')
+let z = `!`
+exports.run = function(client, message, args) {
+let yardim = new Discord.MessageEmbed()
+.setTitle("Abone Botu | Komut Listesi")
+.setColor("RANDOM")
+.addField("__💰  Ekonomi__",`
+**\`${z}yardım ekonomi\`** - *Ekonomi komutları hakkında bilgi edinin!*
 
-exports.run = async (client, message, args) => {
-    try {
-        await message.channel.send(`Komutlar: \n${client.commands.map(props => `\`${props.help.name}\``).join(" | ")}`);
-    } catch (e) {
-        throw e;
-    }
-}
+\`${z}a\`, \`${z}abonerol\`, \`${z}abonelog\`, \`${z}komutlar\`, \`${z}aboneyetkili\`,
+`)
+
+  if(!args[0]) return message.channel.send(yardim) 
+};
+
 
 exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: ["commands"],
-  perm: 0
-};
-
-exports.help = {
-  name: 'komutlar'
-};
-exports.play = {
-  kullanım: '!komutlar',
-  açıklama: 'Botun Komutlarını Görüntüleyebilirsiniz.',
-  kategori: 'Genel'
-}
+    enabled: true, 
+    aliases: ["yardim","help",'komutlar','commands'],
+  };
+  
+  exports.help = {
+    name: 'yardım'
+  };
