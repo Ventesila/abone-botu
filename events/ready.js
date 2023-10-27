@@ -16,7 +16,7 @@ module.exports = client => {
   );
   client.user.setStatus("online");
   var oyun = [
-    "🤖 | Muhammed Demirel!",
+    "🤖 | Kızların Kalbiyle",
 
   ];
 
